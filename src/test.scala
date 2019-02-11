@@ -3,3 +3,4 @@ object test {
     println("hi")
   }
 }
+p
