@@ -18,7 +18,7 @@ class Weapon(var name: String, var damage: Int) {
   def findWeapon(): Weapon = {
     /**
       * @return <A new Weapon object>
-      * @desc <This method randomly assigns a Weapon object>
+      * @note <This method randomly assigns a Weapon object>
       */
     val randomNum: Int = Random.nextInt(4)
     if (randomNum == 0) {
