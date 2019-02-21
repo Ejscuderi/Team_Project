@@ -1,9 +1,12 @@
-import bottle
+from bottle import route, run, template
 
+@route('/hello/<name><text>')
+def index(name, text):
+    name="TA. "
+    text="This is my server demo for the project"
+    return template('<b>Hello {{name}}{{text}}</b>!', name=name, text=text)
 
-@bottle.route('/')
-def index():
-    return bottle.static_file("htmlFinal.html", root="")
+run(host='localhost', port=8080)
 
+# http://localhost:8080/hello/world
 
-bottle.run(host="0.0.0.0", port=8080, debug=True)
