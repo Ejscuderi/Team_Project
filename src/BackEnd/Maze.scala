@@ -29,4 +29,5 @@ class Maze(val numRows: Int, val numCols: Int) {
       maze(row)(col) = new Cell(background, false, Array(row, col))
     }
   }
+
 }

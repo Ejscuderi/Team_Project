@@ -6,7 +6,7 @@ package BackEnd
   * @version <2/15/2019>
   */
 
-class Player(var health: Int, var weapon: Weapon, var position: Array[Int]) {
+class Player(val name: String, var health: Int, var weapon: Weapon, var position: Array[Int]) {
   /**
     * Each player has health and weapon
     */
