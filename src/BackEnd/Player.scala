@@ -21,4 +21,13 @@ class Player(val name: String, var health: Int, var weapon: Weapon, var position
       this.health = 0
     }
   }
+
+  override def equals(that: Any): Boolean = {
+    // Overridden equals method to aid TestNewPlayer in comparing Player objects
+    that match {
+      case that: Player => name == that.name && health == that.health && weapon.name == that.weapon.name && position(0) == that.position(0) && position(1) == that.position(1)
+      case _ => false
+
+    }
+  }
 }

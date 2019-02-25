@@ -18,9 +18,7 @@ class TestNewPlayer extends FunSuite {
 
     BackEnd.Play.myPlayers = ArrayBuffer(player1, player2, player3, player4)
     BackEnd.Play.newPlayer("Cecelia", Array(6,12))
-    println(BackEnd.Play.myPlayers)
-    println(ArrayBuffer(player1.name, player2, player3, player4, player5))
-    assert(BackEnd.Play.myPlayers.equals(ArrayBuffer(player1, player2, player3, player4, player5)), 'test1)
+    assert(BackEnd.Play.myPlayers == ArrayBuffer(player1, player2, player3, player4, player5), 'test1)
 
     BackEnd.Play.newPlayer("John", Array(10,7))
     assert(BackEnd.Play.myPlayers == ArrayBuffer(player1, player2, player3, player4, player5, player6), 'test2)
