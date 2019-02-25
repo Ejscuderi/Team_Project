@@ -31,7 +31,7 @@ object Play {
       if (this.myPlayers.length == 1) {
         this.myPlayers(0)
       }
-      else Unit
+      else false
   }
 
   def eliminatePlayer(myPlayer: Player): Boolean = {
