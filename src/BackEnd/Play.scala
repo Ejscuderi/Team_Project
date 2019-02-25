@@ -26,7 +26,7 @@ object Play {
   }
 
   def findWinner(): Any = {
-    /** @return <if one Player left, return Player, otherwise return Unit>
+    /** @return <if one Player left, return Player, otherwise return false>
       */
       if (this.myPlayers.length == 1) {
         this.myPlayers(0)
