@@ -1,7 +1,6 @@
 package BackEnd
 
-/**
-  * @author <Caroline Hart>
+/** @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/15/2019>
   */
