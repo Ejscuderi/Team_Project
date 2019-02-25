@@ -13,7 +13,6 @@ import java.awt.Toolkit
   * @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/18/2019>
-  * @todo <Finish making a 2D array of cells, where each cell is Resources\Maze\Background.png>
   */
 
 class Maze(val numRows: Int, val numCols: Int) {

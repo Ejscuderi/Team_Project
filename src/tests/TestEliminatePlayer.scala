@@ -4,6 +4,12 @@ import BackEnd._
 import org.scalatest.FunSuite
 import scala.collection.mutable.ArrayBuffer
 
+/**
+  * @author <Caroline Hart>
+  * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
+  * @version <2/24/2019>
+  */
+
 class TestEliminatePlayer extends FunSuite {
   test("Tests Backend.Play.eliminatePlayer function") {
     val weapon = new Weapon("", 0)

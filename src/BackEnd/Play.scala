@@ -5,7 +5,6 @@ import scala.collection.mutable.ArrayBuffer
 /** @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/18/2019>
-  * @todo <Finish newPlayer, findWinner, and eliminatePlayer functions>
   */
 
 object Play {
