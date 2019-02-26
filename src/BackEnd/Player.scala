@@ -1,12 +1,11 @@
 package BackEnd
 
-/**
-  * @author <Caroline Hart>
+/** @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/15/2019>
   */
 
-class Player(var health: Int, var weapon: Weapon, var position: Array[Int]) {
+class Player(val name: String, var health: Int, var weapon: Weapon, var position: Array[Int]) {
   /**
     * Each player has health and weapon
     */
@@ -19,6 +18,15 @@ class Player(var health: Int, var weapon: Weapon, var position: Array[Int]) {
     this.health -= hitWeapon.damage
     if (this.health < 0) {
       this.health = 0
+    }
+  }
+
+  override def equals(that: Any): Boolean = {
+    // Overridden equals method to aid TestNewPlayer in comparing Player objects
+    that match {
+      case that: Player => name == that.name && health == that.health && weapon.name == that.weapon.name && position(0) == that.position(0) && position(1) == that.position(1)
+      case _ => false
+
     }
   }
 }
