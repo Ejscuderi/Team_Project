@@ -4,7 +4,7 @@ import bottle
 @route('/hello/<name>', method="GET")
 def index(name):
     name = "TA. "
-    return template("<b>Hello {{name}} This is my server</b>", name=name)
+    return template("<b>Hello {{name}} This is my server demo</b>", name=name)
 
 
 @route('/requestStuff.py')
