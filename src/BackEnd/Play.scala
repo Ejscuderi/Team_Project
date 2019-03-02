@@ -8,40 +8,38 @@ import scala.collection.mutable.ArrayBuffer
   */
 
 object Play {
-  var myPlayers: ArrayBuffer[Player] = ArrayBuffer()
-  def main(args: Array[String]): Unit = {
-
-    val maze: Maze = new Maze(30,20)
-    println(maze)
-  }
-
+  var myPlayers: ArrayBuffer[Player] = ArrayBuffer() // Stores all the players in the game
 
   def newPlayer(name: String, position: Array[Int]): Unit = {
-    /** //@param name, health,
+    /** //@param name, health
+      * Adds a new player to the myPlayer ArrayBuffer
       */
-      val weapon =  new Weapon("", 0)
-      val currentPlayer: Player = new Player(name, 100, weapon, position)
-      this.myPlayers += currentPlayer
+      val weapon =  new Weapon("", 0) // Instantiate empty weapon
+      val currentPlayer: Player = new Player(name, 100, weapon, position) // Create new Player with name, health = 100, empty weapon, position
+      this.myPlayers += currentPlayer // Add new Player to the myPlayers ArrayBuffer
   }
 
   def findWinner(): Any = {
     /** @return <if one Player left, return Player, otherwise return false>
+      * If one player is left, return that player
+      * Else, return false
       */
-      if (this.myPlayers.length == 1) {
-        this.myPlayers(0)
+      if (this.myPlayers.length == 1) { // If one Player in myPlayers array
+        this.myPlayers(0) // return Player as winner
       }
-      else false
+      else false // No winner, return false
   }
 
   def eliminatePlayer(myPlayer: Player): Boolean = {
     /** //@param <Player to be eliminated>
       * @return <true if player was eliminated, false otherwise>
+      * Takes player out of the myPlayers ArrayBuffer
       */
-      if (this.myPlayers.contains(myPlayer)) {
-        this.myPlayers -= myPlayer
-        true
+      if (this.myPlayers.contains(myPlayer)) { // if myPlayer in myPlayers ArrayBuffer
+        this.myPlayers -= myPlayer // remove myPlayer from myPlayers ArrayBuffer
+        true // myPlayer was removed from myPlayers ArrayBuffer
       }
-      else false
+      else false // myPlayer was not found in myPlayers ArrayBuffer
   }
 
 }
