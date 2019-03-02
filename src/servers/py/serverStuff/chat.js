@@ -40,4 +40,5 @@ function addUser(){
     messageElement.value = "";
     var toSend = JSON.stringify({"user": user});
     ajaxPostRequest("/send", toSend, renderUser());
+
 }

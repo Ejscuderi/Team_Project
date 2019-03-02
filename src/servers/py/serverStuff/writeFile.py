@@ -10,3 +10,4 @@ def add_user(user):
     filename = "user.txt"
     with open(filename, "a") as file:
         file.write(user + "\n")
+
