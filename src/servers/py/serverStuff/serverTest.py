@@ -1,15 +1,15 @@
 import bottle
 import json
 import src.servers.py.serverStuff.writeFile
+
 a = src.servers.py.serverStuff.writeFile
-# import writeFile
 
 
 @bottle.route('/')
 def index():
     return bottle.static_file("index.html", root="")
 
-@bottle.route('/user.js')
+@bottle.route('/chat.js')
 def static():
     return bottle.static_file("chat.js", root="")
 
@@ -17,7 +17,7 @@ def static():
 def get_users():
     return json.dumps(a.get_user())
 
-@bottle.post('/send')
+@bottle.route('/send')
 def do_users():
     content = bottle.request.body.read().decode()
     content = json.loads(content)
