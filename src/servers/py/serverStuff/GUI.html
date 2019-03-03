@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <script src="user.js"></script>
 </head>
+
 <body onload="loadUsers();">
 Enter Username: <input type="text" id="user">
 <button onClick="addUser();">Join</button>
 <hr/>
 <div id="users"></div><br/>
 </body>
+
 <head>
     <meta charset="UTF-8">
     <title>CSE 116 project</title>
@@ -43,17 +47,18 @@ Enter Username: <input type="text" id="user">
         }
 
     </style>
-</head>
+</head> <!--Set the design for the sections of our GUI and website-->
+
 <body>
 
 <header>
     <h1>Maze MMO</h1>
-    <h2><time>00:00:00</time></h2>
+    <h2><time>00:00:00</time></h2> <!--Set the timer to all zeros-->
 </header>
 
 <section>
     <nav>
-        <ul>
+        <ul> <!--Create a list of information on left side of website-->
             <li>Use WSAD to move character</li><br>
             <li>Pick up weapons to hurt other players</li><br>
             <li>Make it to the center before others</li><br>
@@ -67,9 +72,9 @@ Enter Username: <input type="text" id="user">
             <li> Sword <img src="../../../Resources/Weapons/sword.png" alt="sword" height="40" width="40"> : 20 damage</li><br>
         </ul>
     </nav>
-    <article align="center">Maze here</article>
+    <article align="center">Maze here</article> <!--Section for the actual maze-->
     <nav>
-        <ul>
+        <ul> <!--List of other information for the users-->
             <li>spots left here</li><br>
             <li>other information</li><br>
             <li>other information</li><br>
@@ -103,10 +108,8 @@ Enter Username: <input type="text" id="user">
         t = setTimeout(add, 1000);
     }
     timer();
-</script>
-
-
-
+</script> <!--Function creates a timer-->
 
 </body>
+
 </html>
