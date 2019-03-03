@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+<meta charset="UTF-8">
 <head>
     <title>CSE 116 project</title>
+
     <script src="../servers/py/serverStuff/user.js"></script>
+    <!--Set the design for the sections of our GUI and website -->
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    header{
+        background-color: dimgrey;
+        padding: 10px;
+        text-align: center;
+        font-size: 15px;
+        color: white;
+    }
+    nav{
+        float: left;
+        width: 15%;
+        height: 800px;
+        background: gray;
+        padding: 10px;
+    }
+    nav ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    article{
+        float: left;
+        padding: 10px;
+        width: 70%;
+    }
+
+</style>
 </head>
 
 <body onload="loadUsers();">
@@ -13,43 +47,6 @@ Enter Username: <input type="text" id="user">
 <hr/>
 <div id="users"></div><br/>
 </body>
-
-<head>
-    <meta charset="UTF-8">
-    <title>CSE 116 project</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        header{
-            background-color: dimgrey;
-            padding: 10px;
-            text-align: center;
-            font-size: 15px;
-            color: white;
-        }
-        nav{
-            float: left;
-            width: 15%;
-            height: 800px;
-            background: gray;
-            padding: 10px;
-        }
-        nav ul{
-            list-style-type: none;
-            padding: 0;
-        }
-        article{
-            float: left;
-            padding: 10px;
-            width: 70%;
-        }
-
-    </style>
-</head> <!--Set the design for the sections of our GUI and website-->
 
 <body>
 
