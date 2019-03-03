@@ -34,11 +34,12 @@ function loadUsers(){
 }
 
 function addUser(){
-    var messageElement = document.getElementById("user");
+    var element = document.getElementById("user");
 
-    var user = messageElement.value;
-    messageElement.value = "";
+    var user = element.value;
+    element.value = "";
     var toSend = JSON.stringify({"user": user});
-    ajaxPostRequest("/send", toSend, renderUser());
+
+    ajaxPostRequest("/user", toSend, renderUser());
 
 }
