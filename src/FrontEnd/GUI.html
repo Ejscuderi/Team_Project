@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="user.js"></script>
+</head>
+<body onload="loadUsers();">
+Enter Username: <input type="text" id="user">
+<button onClick="addUser();">Join</button>
+<hr/>
+<div id="users"></div><br/>
+</body>
+<head>
     <meta charset="UTF-8">
     <title>CSE 116 project</title>
     <style>
