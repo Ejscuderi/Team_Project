@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSE 116 project</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: dimgrey;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+            color: white;
+        }
+        nav{
+            float: left;
+            width: 20%;
+            background: gray;
+            padding: 20px;
+        }
+        nav ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        article{
+            float: left;
+            padding: 20px;
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Maze MMO</h1>
+    <h2><time>00:00:00</time></h2>
+</header>
+
+<section>
+    <nav>
+        <ul>
+            <li>Use WSAD to move character</li><br>
+            <li>Pick up weapons to hurt other players</li><br>
+            <li>Make it to the center before others</li><br>
+            <li>Weapons:</li><br>
+            <li> Axe <img src="../Resources/Weapons/axe.png" alt="axe" height="40" width="40"> : 25 damage</li><br>
+            <li> Bat <img src="../Resources/Weapons/bat.png" alt="bat" height="40" width="40"> : 10 damage</li><br>
+            <li> Gun <img src="../Resources/Weapons/gun.png" alt="gun" height="40" width="40"> : 40 damage</li><br>
+            <li> Sword <img src="../Resources/Weapons/sword.png" alt="sword" height="40" width="40"> : 20 damage</li><br>
+            <li>Have fun!</li>
+        </ul>
+    </nav>
+    <article>Maze here</article>
+</section>
+
+<script>
+    var h2 = document.getElementsByTagName('h2')[0],
+        seconds = 0, minutes = 0, hours = 0,
+        t;
+
+    function add() {
+        seconds++;
+        if (seconds >= 60) {
+            seconds = 0;
+            minutes++;
+            if (minutes >= 60) {
+                minutes = 0;
+                hours++;
+            }
+        }
+
+        h2.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+        timer();
+    }
+    function timer() {
+        t = setTimeout(add, 1000);
+    }
+    timer();
+</script>
+
+
+
+
+</body>
+</html>
