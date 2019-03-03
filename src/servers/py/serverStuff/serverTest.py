@@ -10,6 +10,7 @@ a = src.servers.py.serverStuff.writeFile
 def index():
     return bottle.static_file("GUI.html", root="")
 
+
 @bottle.route('/user.js')
 def static():
     return bottle.static_file("user.js", root="")
