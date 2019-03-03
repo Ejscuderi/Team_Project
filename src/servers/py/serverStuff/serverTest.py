@@ -19,8 +19,8 @@ def static():
 def get_users():
     # a.add_user("hi")
     content = bottle.request.body.read().decode()
-    content = json.loads(content)
-    a.add_user(content['user'])
+    contents = json.loads(content)
+    a.add_user(contents['user'])
     return json.dumps(a.get_user())
 
 
