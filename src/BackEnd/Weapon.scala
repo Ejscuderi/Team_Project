@@ -21,14 +21,14 @@ class Weapon(var name: String, var damage: Int) {
       * @return <A new Weapon object>
       * @note <This method randomly assigns a Weapon object>
       */
-    val randomNum: Int = Random.nextInt(4)
-    if (randomNum == 0) {
+    val randomNum: Int = Random.nextInt(8)
+    if (randomNum == 0 || randomNum == 1 || randomNum == 2) {
       new Weapon("Sword", 20)
     }
-    else if (randomNum == 1) {
+    else if (randomNum == 3 || randomNum == 4) {
       new Weapon("Gun", 40)
     }
-    else if (randomNum == 2) {
+    else if (randomNum == 5) {
       new Weapon("Axe", 25)
     }
     else {
