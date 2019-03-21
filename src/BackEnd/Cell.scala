@@ -1,8 +1,6 @@
 package BackEnd
 
 import java.awt.Image
-import javax.imageio.ImageIO
-
 
 /**
   * @author <Caroline Hart>

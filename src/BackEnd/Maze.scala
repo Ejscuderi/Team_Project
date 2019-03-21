@@ -1,12 +1,6 @@
 package BackEnd
 
-import java.awt.image.BufferedImage
-import javax.imageio.ImageIO
-
-import java.awt.{GridLayout, Image}
-import java.awt.image.BufferedImage
-import javax.swing.{ImageIcon, JFrame, JLabel, JPanel}
-
+import java.awt.Image
 import java.awt.Toolkit
 
 /**
