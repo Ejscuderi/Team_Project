@@ -1,5 +1,3 @@
-
-
 function ajaxGetRequest(path, callback){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
@@ -32,7 +30,7 @@ function renderUser(response){
 }
 
 function loadUsers(){
-    ajaxGetRequest("/join", renderUser);
+    ajaxGetRequest("/user", renderUser);
 }
 
 function addUser(){
@@ -42,6 +40,6 @@ function addUser(){
     element.value = "";
     var toSend = JSON.stringify({"user": user});
 
-    ajaxPostRequest("/join", toSend, renderUser());
+    ajaxPostRequest("/user", toSend, renderUser());
 
 }
