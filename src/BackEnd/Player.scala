@@ -1,22 +1,27 @@
 package BackEnd
 
+import BackEnd.PlayerStates.{playerState, standing}
+
 /** @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/15/2019>
   */
 
-class Player(val name: String, var health: Int, var weapon: Weapon, var position: List[Int]) {
+class Player(val name: String, var health: Int, var weapon: Weapon, var position: Array[Int]) {
   /**
     * Each player has health and weapon
     */
 
 //  Alyssa
+  val default: Weapon = new Weapon("", 0)
+
   var moveSpeed: Double = 0.0
   var wPressed: Boolean = false
   var aPressed: Boolean = false
   var sPressed: Boolean = false
   var dPressed: Boolean = false
-  var state: Player = new Player("Alyssa", 100, "gun", List(1, 2, 3))
+
+  var state: playerState = new standing(this)
 
   def aPress(): Unit = {
     this.aPressed = true
@@ -40,22 +45,18 @@ class Player(val name: String, var health: Int, var weapon: Weapon, var position
 
   def aReleased(): Unit = {
     this.aPressed = false
-    this.state.aReleased()
   }
 
   def dReleased(): Unit = {
     this.dPressed = false
-    this.state.dReleased()
   }
 
   def wReleased(): Unit = {
     this.wPressed = false
-    this.state.wReleased()
   }
 
   def sReleased(): Unit = {
     this.sPressed = false
-    this.state.sReleased()
   }
 
 //end Alyssa
@@ -72,7 +73,7 @@ class Player(val name: String, var health: Int, var weapon: Weapon, var position
     }
   }
 
-  def equals(that: Any): Boolean = {
+  override def equals(that: Any): Boolean = {
     // Overridden equals method to aid TestNewPlayer in comparing Player objects
     that match {
       case that: Player => name == that.name && health == that.health && weapon.name == that.weapon.name && position(0) == that.position(0) && position(1) == that.position(1)

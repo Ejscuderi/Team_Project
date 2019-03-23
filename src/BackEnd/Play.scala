@@ -1,5 +1,7 @@
 package BackEnd
 
+import scalafx.application.JFXApp
+
 import scala.collection.mutable.ArrayBuffer
 
 /** @author <Caroline Hart>
@@ -7,7 +9,7 @@ import scala.collection.mutable.ArrayBuffer
   * @version <2/18/2019>
   */
 
-object Play {
+object Play extends JFXApp{
   var myPlayers: ArrayBuffer[Player] = ArrayBuffer() // Stores all the players in the game
 
   def newPlayer(name: String, position: Array[Int]): Unit = {
