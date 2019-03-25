@@ -2,7 +2,7 @@ package BackEnd
 
 import BackEnd.PlayerStates.{playerState, standing, walking}
 
-/** @author <Caroline Hart>
+/** @author <Caroline Hart, Alyssa Shellman> // See comments
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/15/2019>
   */
