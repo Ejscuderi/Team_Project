@@ -50,7 +50,7 @@ class Maze(var numRows: Int, var numCols: Int) {
     for (col <- 9 until 14) {maze(12)(col) = new Cell(brick, true, Array(12, col))}
     for (col <- 9 until 13) {maze(18)(col) = new Cell(brick, true, Array(18, col))}
 
-    maze()() = new Cell(brick, true, Array(, ))
+    //maze()() = new Cell(brick, true, Array(, ))
 
 
   }
