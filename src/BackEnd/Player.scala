@@ -1,5 +1,7 @@
 package BackEnd
 
+import BackEnd.PlayerStates.{playerState, standing}
+
 /** @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/15/2019>
@@ -10,6 +12,56 @@ class Player(val name: String, var health: Int, var weapon: Weapon, var position
     * Each player has health and weapon
     */
 
+//  Alyssa
+  val default: Weapon = new Weapon("", 0)
+
+  var moveSpeed: Double = 0.0
+  var wPressed: Boolean = false
+  var aPressed: Boolean = false
+  var sPressed: Boolean = false
+  var dPressed: Boolean = false
+
+  var state: playerState = new standing(this)
+
+  def aPress(): Unit = {
+    this.aPressed = true
+    this.state.aPress()
+  }
+
+  def dPress(): Unit = {
+    this.dPressed = true
+    this.state.aPress()
+  }
+
+  def wPress(): Unit = {
+    this.wPressed = true
+    this.state.wPress()
+  }
+
+  def sPress(): Unit = {
+    this.sPressed = true
+    this.state.sPress()
+  }
+
+  def aReleased(): Unit = {
+    this.aPressed = false
+  }
+
+  def dReleased(): Unit = {
+    this.dPressed = false
+  }
+
+  def wReleased(): Unit = {
+    this.wPressed = false
+  }
+
+  def sReleased(): Unit = {
+    this.sPressed = false
+  }
+
+//end Alyssa
+
+//  Caroline
   def assignHitDamage(hitWeapon: Weapon): Unit = {
     /**
       * //@param: <Weapon Player was hit with>
@@ -30,3 +82,4 @@ class Player(val name: String, var health: Int, var weapon: Weapon, var position
     }
   }
 }
+//end Caroline
