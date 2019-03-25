@@ -8,11 +8,11 @@ class walking(player: Player) extends playerState(player) {
 //  20 should be cell size
 
   override def aPress(): Unit = {
-    player.position(0) = player.position(0) - 20
+    player.position(0) = player.position.head - 20
   }
 
   override def dPress(): Unit = {
-    player.position(0) = player.position(0) + 20
+    player.position(0) = player.position.head + 20
   }
 
   override def wPress(): Unit = {
