@@ -4,10 +4,9 @@ import BackEnd.Player
 
 abstract class playerState(player: Player) {
 
-  var timeInState: Double = 0.0
 
+//  Alyssa
   def update(dt: Double): Unit = {
-    timeInState += dt
 
     if(player.aPressed){
       this.aPress()
@@ -36,3 +35,4 @@ abstract class playerState(player: Player) {
     true
   }
 }
+//end Alyssa

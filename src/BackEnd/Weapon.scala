@@ -16,9 +16,6 @@ class Weapon(var name: String, var damage: Int) {
     * Players can use weapons to damage the health of their competitors
     */
 
-  def default(): Weapon = {
-    new Weapon("", 0)
-  }
 
   def findWeapon(): Weapon = {
     /**

@@ -12,7 +12,7 @@ import scala.collection.mutable.ArrayBuffer
 object Play extends JFXApp{
   var myPlayers: ArrayBuffer[Player] = ArrayBuffer() // Stores all the players in the game
 
-  def newPlayer(name: String, position: Array[Int]): Unit = {
+  def newPlayer(name: String, position: List[Int]): Unit = {
     /** //@param name, health
       * Adds a new player to the myPlayer ArrayBuffer
       */

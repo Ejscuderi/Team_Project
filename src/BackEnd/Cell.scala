@@ -1,6 +1,6 @@
 package BackEnd
 
-import java.awt.Image
+import scalafx.scene.image.Image
 
 /**
   * @author <Caroline Hart>
