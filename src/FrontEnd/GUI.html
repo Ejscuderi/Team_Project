@@ -11,6 +11,15 @@
     *{
         box-sizing: border-box;
     }
+    .imgbox{
+        display: grid;
+        height: 100%;
+    }
+    .center-fit{
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
     body{
         font-family: Arial, Helvetica, sans-serif;
     }
@@ -18,13 +27,13 @@
         background-color: dimgrey;
         padding: 10px;
         text-align: center;
-        font-size: 15px;
+        font-size: 12px;
         color: white;
     }
     nav{
         float: left;
         width: 15%;
-        height: 650px;
+        height: 700px;
         background: gray;
         padding: 10px;
     }
@@ -49,6 +58,9 @@ Enter Username: <input type="text" id="user">
 </body>
 
 <body>
+<script src = getMaze.js>
+    var y;
+</script> <!-- grab number of players from Play.scala -->
 
 <header>
     <h1>Maze MMO</h1>
@@ -73,13 +85,18 @@ Enter Username: <input type="text" id="user">
     </nav>
 
     <article>
-        <img src="../Resources/Maze/mazeTemp.png" alt="maze">
+        <div class="imgbox">
+            <img class="center-fit"  alt = "maze" src="../Resources/Maze/mazeTemp.png">
+        </div>
     </article> <!--Section for the actual maze-->
 
     <nav>
         <ul> <!--List of other information for the users-->
-            <li>spots left here<br></li>
-            <li>other information<br></li>
+            <li>spots left: <script type="text/javascript">
+                document.write(y)
+            </script>
+                <br></li>
+            <li><br></li>
             <li>other information<br></li>
             <li>other information<br></li>
             <li>other information<br></li>
