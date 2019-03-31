@@ -2,7 +2,8 @@
 
 <html lang="en">
 <meta charset="UTF-8">
-<head>
+
+<head onload="getUsername()">
     <title>CSE 116 project</title>
 
     <script src="../server/user.js"></script>
@@ -48,19 +49,22 @@
     }
 
 </style>
+    <script>
+        function getUsername() {
+            var person = prompt("Please enter your username", "Name");
+            if(person != null){
+                document.getElementById('test').innerHTML = person;
+            }
+        }
+    </script>
 </head>
 
-<body onload="loadUsers();">
-Enter Username: <input type="text" id="user">
-<button onClick="addUser();">Join</button>
+<body>
+<p id="test"></p>
+
+
 <hr/>
 <div id="users"></div><br/>
-</body>
-
-<body>
-<script src = getMaze.js>
-    var y;
-</script> <!-- grab number of players from Play.scala -->
 
 <header>
     <h1>Maze MMO</h1>
@@ -70,12 +74,11 @@ Enter Username: <input type="text" id="user">
 <section>
     <nav>
         <ul> <!--Create a list of information on left side of website-->
-            <li>Use WSAD to move character<br></li>
-            <li>Pick up weapons to hurt other players<br></li>
-            <li>Make it to the center before others<br></li>
-            <li>Player:<br></li>
-            <li><img src="../Resources/Characters/Person1.png" alt="person" height="40" width="40"> : 100 health<br></li>
-            <li>Grab weapons from: <img src="../Resources/Maze/Weapons.png" alt=""><br></li>
+            <li>Use WSAD to move character<br><br></li>
+            <li>Pick up weapons to hurt other players<br><br></li>
+            <li>Make it to the center before others<br><br></li>
+            <li>Player:<img src="../Resources/Characters/Person1.png" alt="person" height="40" width="40"><br></li>
+            <li>Grab weapons from: <img src="../Resources/Maze/Weapons.png" height="40" alt=""><br></li>
             <li>Weapons:<br></li>
             <li> Axe <img src="../Resources/Characters/Person1.axe.png" alt="axe" height="40" width="40"> : 25 damage<br></li>
             <li> Bat <img src="../Resources/Characters/Person1.bat.png" alt="bat" height="40" width="40"> : 10 damage<br></li>
@@ -92,14 +95,12 @@ Enter Username: <input type="text" id="user">
 
     <nav>
         <ul> <!--List of other information for the users-->
-            <li>spots left: <script type="text/javascript">
-                document.write(y)
-            </script>
-                <br></li>
-            <li><br></li>
-            <li>other information<br></li>
-            <li>other information<br></li>
-            <li>other information<br></li>
+            <li>spots left: <script>
+
+            </script><br><br></li>
+            <li>other information<br><br></li>
+            <li>other information<br><br></li>
+            <li>other information<br><br></li>
         </ul>
     </nav>
 </section>

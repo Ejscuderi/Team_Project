@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSE 166 project</title>
+</head>
+<body>
+<p id="temp"></p>
+<button onclick="myFunction()">Join Game</button>
+<script>
+    function myFunction() {
+        var person = prompt("Please enter your username", "Name");
+        if(person != null) {
+            write(person);
+            document.getElementById("temp").innerHTML = "Hello " + person + ", the game will begin shortly.";
+        }
+    }
+    function write(x){
+        let fs = require('fs');
+        fs.appendFileSync('FrontEnd/Players.txt', x, function (err) {
+            if (err) throw err
+        });
+    }
+</script>
+
+</body>
+</html>
