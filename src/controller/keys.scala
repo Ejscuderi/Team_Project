@@ -4,7 +4,7 @@ import BackEnd.Player
 import javafx.event.EventHandler
 import scalafx.scene.input.KeyEvent
 
-
+/**
 
 //Alyssa
 abstract class keys(player: Player) extends EventHandler[KeyEvent] {
@@ -42,5 +42,5 @@ class WASDInputs(player: Player) extends keys(player) {
   override val UP: String = "W"
   override val DOWN: String = "S"
 }
-
+*/
 //end Alyssa

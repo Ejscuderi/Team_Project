@@ -47,8 +47,7 @@ object Play extends JFXApp{
   }
 
   def createMaze(): Maze = {
-    val maze : Maze = new Maze(0, 0)
-    maze.makeMaze1()
+    val maze : Maze = new Maze()
     maze
   }
 
