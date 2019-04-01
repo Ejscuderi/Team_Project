@@ -4,10 +4,8 @@ import scalafx.application.JFXApp
 
 import scala.collection.mutable.ArrayBuffer
 
-import scalaj.http.Http
-
 /** @author <Caroline Hart>
-  * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
+  * @group <Elijah Scuderi, Caroline Hart>
   * @version <2/18/2019>
   */
 

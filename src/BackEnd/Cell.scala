@@ -4,7 +4,7 @@ import scalafx.scene.image.Image
 
 /**
   * @author <Caroline Hart>
-  * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
+  * @group <Elijah Scuderi, Caroline Hart>
   * @version <2/18/2019>
   */
 

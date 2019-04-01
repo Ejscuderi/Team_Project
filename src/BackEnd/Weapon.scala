@@ -4,7 +4,7 @@ import scala.util.Random
 
 /**
   * @author <Caroline Hart>
-  * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
+  * @group <Elijah Scuderi, Caroline Hart>
   * @version <2/15/2019>
   * @todo <Some weapons need to be more rare than others>
   */
