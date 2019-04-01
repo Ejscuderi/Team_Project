@@ -4,19 +4,21 @@ Overall:
 3.Get game to work through IDE/desktop app
 4.Get game to connect to Front End and Server
 5.Figure out communication between MVC(Json)
+6.
+
 
 Front End:
 1.Clean up GUI
 2.Create connections for future use with server and backend
-3.
+3.Create way to collect user name or other info for use
+4.
+
 
 Back End:
 1.Add more functions for playability(detect collision, etc...)
 2.
 
+
 Server:
 1.Figure out whats going on
 2.
-
-Other:
-1.
