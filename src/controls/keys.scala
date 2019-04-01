@@ -1,32 +1,33 @@
 package controls
 
 import BackEnd.Player
-import javafx.scene.input.KeyEvent
-import javafx.event.EventHandler
+import scalafx.scene.input.KeyEvent
+import scalafx.event.EventHandler
+
 
 //Alyssa
 abstract class keys(player: Player) extends EventHandler[KeyEvent] {
 
-  val left: String
-  val right: String
-  val up: String
-  val down: String
+  val LEFT: String
+  val RIGHT: String
+  val UP: String
+  val DOWN: String
 
   override def handle(event: KeyEvent): Unit = {
     val code = event.getCode
     event.getEventType.getName match {
-      case "releaseKey" => code.getName match {
-        case this.left => player.aReleased()
-        case this.right => player.dReleased()
-        case this.up => player.wReleased()
-        case this.down => player.sReleased()
+      /**case "releaseKey" => code.getName match {
+        case this.LEFT => player.aReleased()
+        case this.RIGHT => player.dReleased()
+        case this.UP => player.wReleased()
+        case this.DOWN => player.sReleased()
         case _ =>
-      }
+      }*/
       case "pressKey" => code.getName match {
-        case this.left => player.aPress()
-        case this.right => player.dPress()
-        case this.up => player.wPress()
-        case this.down => player.sPress()
+        case this.LEFT => player.aPress()
+        case this.RIGHT => player.dPress()
+        case this.UP => player.wPress()
+        case this.DOWN => player.sPress()
         case _ =>
       }
       case _ =>
@@ -35,10 +36,10 @@ abstract class keys(player: Player) extends EventHandler[KeyEvent] {
 }
 
 class WASDInputs(player: Player) extends keys(player) {
-  override val left: String = "A"
-  override val right: String = "D"
-  override val up: String = "W"
-  override val down: String = "S"
+  override val LEFT: String = "A"
+  override val RIGHT: String = "D"
+  override val UP: String = "W"
+  override val DOWN: String = "S"
 }
 
 //end Alyssa
