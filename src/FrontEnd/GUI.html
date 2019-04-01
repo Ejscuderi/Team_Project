@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <meta charset="UTF-8">
 
 <head onload="getUsername()">
@@ -69,6 +69,26 @@
 <header>
     <h1>Maze MMO</h1>
     <h2><time>00:00:00</time></h2> <!--Set the timer to all zeros-->
+    <form>
+        Player name: <input type="text" name="player"><br>
+        <button type="button" onclick="myFunction()">Enter Game</button>
+        <script>
+            function myFunction() {
+                var person = prompt("Please enter your username", "Name");
+                if(person != null) {
+                    write(person);
+                    document.getElementById("temp").innerHTML = "Hello " + person + ", the game will begin shortly.";
+                }
+            }
+            function write(x){
+                let fs = require('fs');
+                fs.appendFileSync('FrontEnd/Players.txt', x, function (err) {
+                    if (err) throw err
+                });
+            }
+            console.log();
+        </script>
+    </form>
 </header>
 
 <section>
