@@ -30,9 +30,8 @@ class Maze(var numRows: Int, var numCols: Int) {
     }
   }
 
-  def makeMaze1(): Unit = {
-    this.numRows = 15
-    this.numCols = 30
+  def this() {
+    this(15,30)
     val maze: Array[Array[Cell]] = Array.ofDim[Cell](numRows, numCols)
     for (row <- 0 until numRows) {
       for (col <- 0 until numCols) {
