@@ -1,11 +1,8 @@
-var fs = require('fs');
+var fs = require("fs");
 
-function text(file) {
-    return fs.readFileSync('src/FrontEnd/' + file, 'utf8');
-}
+var data = "New File Contents";
 
-function fuck(){
-    return '5';
-}
-
-var fuxk = fuck();
+fs.writeFile("src/FrontEnd/temp.txt", data, function(err, data) {
+    if (err) console.log(err);
+    console.log("Successfully Written to File.");
+});

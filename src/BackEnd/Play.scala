@@ -4,6 +4,8 @@ import scalafx.application.JFXApp
 
 import scala.collection.mutable.ArrayBuffer
 
+import scalaj.http.Http
+
 /** @author <Caroline Hart>
   * @group <Alyssa Shellman, Elijah Scuderi, Caroline Hart>
   * @version <2/18/2019>
@@ -42,6 +44,12 @@ object Play extends JFXApp{
         true // myPlayer was removed from myPlayers ArrayBuffer
       }
       else false // myPlayer was not found in myPlayers ArrayBuffer
+  }
+
+  def createMaze(): Maze = {
+    val maze : Maze = new Maze(0, 0)
+    maze.makeMaze1()
+    maze
   }
 
 }

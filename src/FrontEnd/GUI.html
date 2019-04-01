@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <meta charset="UTF-8">
 
-<head onload="getUsername()">
+<head>
     <title>CSE 116 project</title>
 
     <script src="../server/user.js"></script>
@@ -50,21 +50,28 @@
 
 </style>
     <script>
-        function getUsername() {
-            var person = prompt("Please enter your username", "Name");
-            if(person != null){
-                document.getElementById('test').innerHTML = person;
+        function makeMaze() {
+            var http = new XMLHttpRequest();
+            http.open('GET', '../BackEnd/Play.scala', true);
+            http.onreadystatechange = function () {
+                document.getElementById('maze').innerHTML =
             }
         }
     </script>
 </head>
 
-<body>
-<p id="test"></p>
+<body onload="getName(); makeMaze()">
 
-
-<hr/>
-<div id="users"></div><br/>
+<script>
+    function getName() {
+        var client = new XMLHttpRequest();
+        client.open('GET', 'Players.txt');
+        client.onreadystatechange = function () {
+            document.getElementById('name').innerHTML = client.responseText;
+        };
+        client.send();
+    }
+</script>
 
 <header>
     <h1>Maze MMO</h1>
@@ -108,9 +115,7 @@
     </nav>
 
     <article>
-        <div class="imgbox">
-            <img class="center-fit"  alt = "maze" src="../Resources/Maze/mazeTemp.png">
-        </div>
+        <p id="maze"></p>
     </article> <!--Section for the actual maze-->
 
     <nav>

@@ -14,9 +14,12 @@ class Maze(var numRows: Int, var numCols: Int) {
   /**
     * @note <Two-dimensional grid that players will walk on during game play>
     */
+
   val background: Image = new Image("Resources/Maze/Background.png")
   val brick: Image = new Image("Resources/Maze/Brick.png")
   val weaponItem: Image = new Image("Resources/Maze/Weapons.png")
+
+
 
   def makeEmptyMaze(): Unit = {
     val maze: Array[Array[Cell]] = Array.ofDim[Cell](numRows, numCols)

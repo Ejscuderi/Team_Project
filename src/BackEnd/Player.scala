@@ -14,7 +14,7 @@ class Player(val name: String, var health: Int, var weapon: Weapon, var position
 
 //  Alyssa
   weapon = new Weapon("", 0)
-  position = List(3, 3)
+  position = List(1, 1)
 
   var moveSpeed_x: Double = 10.0
   var moveSpeed_y: Double = 10.0
