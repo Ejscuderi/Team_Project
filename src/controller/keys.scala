@@ -1,8 +1,9 @@
-package controls
+package controller
 
 import BackEnd.Player
+import javafx.event.EventHandler
 import scalafx.scene.input.KeyEvent
-import scalafx.event.EventHandler
+
 
 
 //Alyssa
