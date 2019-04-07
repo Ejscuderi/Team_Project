@@ -9,7 +9,7 @@ import scala.collection.mutable.ArrayBuffer
   * @version <2/18/2019>
   */
 
-object Play extends JFXApp{
+class Play() extends JFXApp{
   var myPlayers: ArrayBuffer[Player] = ArrayBuffer() // Stores all the players in the game
 
   def newPlayer(name: String, position: List[Int]): Unit = {

@@ -1,7 +1,7 @@
-package FrontEnd
 
 
-import java.awt.Insets
+
+/**import java.awt.Insets
 
 import BackEnd.Maze
 //import controller.keys
@@ -41,4 +41,53 @@ object GUI extends JFXApp {
   for (l <- 0 to 14) {gridPane.add(picBackground, l , 29)}
   val scene = new Scene()
   gridPane.setVisible(true)
+} */
+package FrontEnd
+
+import java.awt.Color
+
+import scalafx.application.JFXApp
+import scalafx.application.JFXApp.PrimaryStage
+import scalafx.scene.Scene
+import scalafx.scene.input.KeyEvent
+import BackEnd._
+import scalafx.scene.control.Button
+import scalafx.scene.image.Image
+import scalafx.scene.layout.{Background, BackgroundFill, BackgroundImage, GridPane}
+
+object GUI extends JFXApp {
+  val play = new Play()
+
+  val background = new Image("File:Resources/Maze/Background.png")
+  val brick = new Image("File:Resources/Maze/Brick.png")
+  val wallButton = new Button() {
+    this.setBackground(new Background(BackgroundFill(Color.black)))
+  }
+  val floorButton = new Button() {
+    this.setBackground((new Background((BackgroundFill(Color.white)))))
+  }
+
+
+  this.stage = new PrimaryStage {
+    title = "CSE116 Game"
+    scene = new Scene() {
+      content = List(
+        new GridPane {
+          for (i <- 0 to 29) {
+            add(wallButton, 0, i)
+          }
+          for (j <- 0 to 29) {
+            add(wallButton, 14, j)
+          }
+          for (k <- 0 to 14) {
+            add(wallButton, k, 0)
+          }
+          for (l <- 0 to 14) {
+            add(wallButton, l, 29)
+          }
+        }
+      )
+    }
+  }
+
 }
