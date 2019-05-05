@@ -29,7 +29,6 @@ class Game {
 
     level.wallLocations.foreach(wall => placeWall(wall.x, wall.y))
     players.values.foreach(player => player.location = startingVector())
-    println("load level")
   }
 
 
@@ -37,7 +36,6 @@ class Game {
     val player = new Player(startingVector(), new PhysicsVector(0, 0))
     players += (id -> player)
     world.objects = player :: world.objects
-    println("add player")
   }
 
 
@@ -62,7 +60,6 @@ class Game {
   def placeWall(x: Int, y: Int): Unit = {
     blockTile(x, y)
     walls = new Wall(x, y) :: walls
-    println("place wall")
   }
 
 
