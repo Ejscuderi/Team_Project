@@ -1,4 +1,4 @@
-package towers.model
+package teamproject.model
 
 import java.net.InetSocketAddress
 

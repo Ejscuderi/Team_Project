@@ -2,12 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Towers</title>
+    <title>CSE116 Project</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <style>
+        *{
+            box-siziing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            background-color: dimgrey;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 15%;
+            height: 700px;
+            background: gray;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
-
-<canvas id="canvas">
+<h1>
+    Caroline Hart and Elijah Scuderi
+</h1>
+<section>
+    <nav>
+        <ul>
+            <li>Use WSAD to move your player<br></li>
+            <li>Make it to the finish at the yellow square!<br></li>
+            <li>Bump into other players to disorient them,<br> but watch out for other players!<br></li>
+            <li>Your player appears yellow<br></li>
+            <li>Other players appear teal blue<br></li>
+        </ul>
+    </nav>
+</section>
+<canvas id="canvas" style="positon: absolute; top: 0; left:0;">
 </canvas>
 
 <script src="gameView.js"></script>

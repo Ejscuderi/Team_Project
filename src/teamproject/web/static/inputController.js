@@ -31,3 +31,12 @@ document.addEventListener("keydown", function (event) {
 document.addEventListener("keyup", function (event) {
     handleEvent(event, false);
 });
+/*
+document.addEventListener("37", function (event) {
+    handleEvent(event, true); //left
+});
+
+document.addEventListener("39", function (event) {
+    handleEvent(event, true); // right
+
+});*/

@@ -1,6 +1,6 @@
-package towers.model.game_objects
+package teamproject.model.game_objects
 
-import towers.model.physics.PhysicsVector
+import teamproject.model.physics.PhysicsVector
 
 class PhysicalObject(var location: PhysicsVector, var velocity: PhysicsVector) extends GameObject {
 

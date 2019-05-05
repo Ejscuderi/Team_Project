@@ -1,23 +1,19 @@
-package towers.model
+package teamproject.model
 
 import play.api.libs.json.{JsValue, Json}
-import towers.model.game_objects._
-import towers.model.physics.{Physics, PhysicsVector, World}
+import teamproject.model.game_objects._
+import teamproject.model.physics.{Physics, PhysicsVector, World}
 
 
 class Game {
 
   val world: World = new World(10)
 
-  //var towers: List[DodgeBallTower] = List()
   var walls: List[Wall] = List()
-  var projectiles: List[PhysicalObject] = List()
-
-  //var baseHealth = 10
 
   var level: Level = new Level()
 
-  var players: Map[String, Player] = Map() // Maps player name to Player
+  var players: Map[String, Player] = Map()
   val playerSize: Double = 0.3
 
   var lastUpdateTime: Long = System.nanoTime()
@@ -27,18 +23,13 @@ class Game {
     world.boundaries = List()
     level = newLevel
 
-    projectiles.foreach(po => po.destroy())
-    //towers = List()
     walls = List()
-    projectiles = List()
 
     blockTile(0, 0, level.gridWidth, level.gridHeight)
 
-    //level.towerLocations.foreach(tower => placeTower(tower.x, tower.y))
     level.wallLocations.foreach(wall => placeWall(wall.x, wall.y))
     players.values.foreach(player => player.location = startingVector())
-
-    //baseHealth = level.maxBaseHealth
+    println("load level")
   }
 
 
@@ -46,6 +37,7 @@ class Game {
     val player = new Player(startingVector(), new PhysicsVector(0, 0))
     players += (id -> player)
     world.objects = player :: world.objects
+    println("add player")
   }
 
 
@@ -70,12 +62,7 @@ class Game {
   def placeWall(x: Int, y: Int): Unit = {
     blockTile(x, y)
     walls = new Wall(x, y) :: walls
-  }
-
-
-  def addProjectile(projectile: PhysicalObject): Unit = {
-    projectiles = projectile :: projectiles
-    world.objects = projectile :: world.objects
+    println("place wall")
   }
 
 
@@ -90,8 +77,6 @@ class Game {
     val dt = (time - this.lastUpdateTime) / 1000000000.0
     Physics.updateWorld(this.world, dt)
     checkForPlayerHits()
-    //checkForBaseDamage()
-    projectiles = projectiles.filter(po => !po.destroyed)
     this.lastUpdateTime = time
   }
 
@@ -99,25 +84,25 @@ class Game {
     val gameState: Map[String, JsValue] = Map(
       "gridSize" -> Json.toJson(Map("x" -> level.gridWidth, "y" -> level.gridHeight)),
       "start" -> Json.toJson(Map("x" -> level.startingLocation.x, "y" -> level.startingLocation.y)),
-      //"base" -> Json.toJson(Map("x" -> level.base.x, "y" -> level.base.y)),
-      //"maxBaseHealth" -> Json.toJson(level.maxBaseHealth),
+      "base" -> Json.toJson(Map("x" -> level.base.x, "y" -> level.base.y)),
       "walls" -> Json.toJson(this.walls.map({ w => Json.toJson(Map("x" -> w.x, "y" -> w.y)) })),
       "players" -> Json.toJson(this.players.map({ case (k, v) => Json.toJson(Map(
         "x" -> Json.toJson(v.location.x),
         "y" -> Json.toJson(v.location.y),
         "v_x" -> Json.toJson(v.velocity.x),
         "v_y" -> Json.toJson(v.velocity.y),
-        "id" -> Json.toJson(k))) })),
-      "projectiles" -> Json.toJson(this.projectiles.map({ po => Json.toJson(Map("x" -> po.location.x, "y" -> po.location.y)) }))
+        "id" -> Json.toJson(k))) }))
     )
 
     Json.stringify(Json.toJson(gameState))
   }
 
-
   def checkForPlayerHits(): Unit = {
-    // TODO: Objective 3
+    // TODO:
+
+    // DEBUG
+    //for ((k,v) <- this.players) {
+    //  println("player: " + k + "  x location: " + v.location.x + "  y location: " + v.location.y)
+    //}
   }
-
-
 }

@@ -1,4 +1,4 @@
-package towers.model
+package teamproject.model
 
 // Received by Multiple Types
 case object SendGameState
@@ -12,7 +12,3 @@ case class RemovePlayer(username: String)
 case class MovePlayer(username: String, x: Double, y:Double)
 case class StopPlayer(username: String)
 case class LoadLevel(levelNumber: Int)
-
-
-//Received by TowerActor
-case object Fire

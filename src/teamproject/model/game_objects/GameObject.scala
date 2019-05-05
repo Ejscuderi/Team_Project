@@ -1,4 +1,4 @@
-package towers.model.game_objects
+package teamproject.model.game_objects
 
 class GameObject {
 

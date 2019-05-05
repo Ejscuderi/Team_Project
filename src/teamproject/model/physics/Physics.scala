@@ -1,6 +1,6 @@
-package towers.model.physics
+package teamproject.model.physics
 
-import towers.model.game_objects.{Boundary, PhysicalObject}
+import teamproject.model.game_objects.{Boundary, PhysicalObject}
 
 object Physics {
 
