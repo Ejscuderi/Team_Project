@@ -49,10 +49,10 @@ class Game {
     val ur = new PhysicsVector(x + width, y)
     val lr = new PhysicsVector(x + width, y + height)
     val ll = new PhysicsVector(x, y + height)
-
     world.boundaries ::= new Boundary(ul, ur)
     world.boundaries ::= new Boundary(ur, lr)
     world.boundaries ::= new Boundary(lr, ll)
+
     world.boundaries ::= new Boundary(ll, ul)
   }
 
@@ -66,8 +66,6 @@ class Game {
   def startingVector(): PhysicsVector = {
     new PhysicsVector(level.startingLocation.x + 0.5, level.startingLocation.y + 0.5)
   }
-
-
 
   def update(): Unit = {
     val time: Long = System.nanoTime()
@@ -110,10 +108,9 @@ class Game {
   }
 
   def checkForPlayerHits(): Unit = {
-    // TODO:
     for ((k,v) <- this.players) {
       for ((key,value) <- this.players) {
-        if (k != key && this.playerSize >= Math.sqrt(Math.pow(v.location.x - value.location.x, 2) + Math.pow(v.location.y - value.location.y, 2))) {
+        if (k != key && v.location.x != this.level.startingLocation.x + 0.5 && v.location.y != this.level.startingLocation.y + 0.5 && this.playerSize >= Math.sqrt(Math.pow(v.location.x - value.location.x, 2) + Math.pow(v.location.y - value.location.y, 2))) {
           v.playerHit(value)
         }
       }

@@ -17,20 +17,19 @@ class Player(inputLocation: PhysicsVector,
   }
 
   def playerHit(otherPlayer: Player): Unit = {
-    if (this.velocity.x != otherPlayer.velocity.x && this.velocity.x > otherPlayer.velocity.x) {
+    if (this.velocity.x != otherPlayer.velocity.x && Math.abs(this.velocity.x) > Math.abs(otherPlayer.velocity.x)) {
       // if x velocities are not equal and x velocity of this is greater than x velocity of otherPlayer
-      otherPlayer.velocity.x += 0.90 * this.velocity.x
+      otherPlayer.velocity.x += this.velocity.x
     }else if(this.velocity.x != otherPlayer.velocity.x) {
       // if x velocities are not equal
-      this.velocity.x += 0.90 * otherPlayer.velocity.x
+      this.velocity.x += otherPlayer.velocity.x
     }
-    if (this.velocity.y != otherPlayer.velocity.y && this.velocity.y > otherPlayer.velocity.x) {
-      // if y velocities are not equal and x velocity of this is greater than x velocity of otherPlayer
-      otherPlayer.velocity.y += 0.90 * this.velocity.y
+
+    if (this.velocity.y != otherPlayer.velocity.y && Math.abs(this.velocity.y) > Math.abs(otherPlayer.velocity.x)) {
+      otherPlayer.velocity.y += this.velocity.y
     }else if(this.velocity.y != otherPlayer.velocity.y) {
       // if y velocities are not equal
-      this.velocity.y += 0.90 * otherPlayer.velocity.y
-
+      this.velocity.y += otherPlayer.velocity.y
     }
   }
 
