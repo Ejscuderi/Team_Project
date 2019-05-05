@@ -94,12 +94,26 @@ class Game {
     Json.stringify(Json.toJson(gameState))
   }
 
-  def checkForPlayerHits(): Unit = {
-    // TODO:
+  def checkForBaseDamage(): Unit = {
+    // Whenever a player reaches the enemy base it will lose 1 point of health
+    // and the player will be returned to the starting location of the level.
+    // A player is determined to have reached the base if they are closer than
+    // the size of the player from the center of the tile where the base is located.
+    for ((k,v) <- this.players) { // Iterate through player map
+      if (this.playerSize >= Math.sqrt(Math.pow(v.location.x - this.level.base.x - 0.5 , 2) + Math.pow(v.location.y - this.level.base.y - 0.5, 2))) {// if playerSize is less than distance between player and base
+        v.location.x = this.level.startingLocation.x + 0.5 // set player x location to start
+        v.location.y = this.level.startingLocation.y + 0.5 // set player y location to start
+        v.stop()
+      }
+    }
+  }
 
-    // DEBUG
-    //for ((k,v) <- this.players) {
-    //  println("player: " + k + "  x location: " + v.location.x + "  y location: " + v.location.y)
-    //}
+  def checkForPlayerHits(id: String): Unit = {
+    // TODO:
+    for ((k,v) <- this.players) {
+      if (k != id && this.playerSize >= Math.sqrt(Math.pow(v.location.x - this.players(id).location.x, 2) + Math.pow(v.location.y - this.players(id).location.y, 2))) {
+        // write method in player class
+      }
+    }
   }
 }
