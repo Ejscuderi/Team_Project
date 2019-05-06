@@ -13,13 +13,13 @@ function parseGameState(event) {
 
     drawGameBoard(gameState['gridSize']);
 
-    placeSquare(gameState['start']['x'], gameState['start']['y'], '#00ff00');
+    placeSquare(gameState['start']['x'], gameState['start']['y'], '#db0000');
 
-    placeSquare(gameState['base']['x'], gameState['base']['y'], rgb(255,255,0));
+    placeSquare(gameState['base']['x'], gameState['base']['y'], '#03ba00');
 
     for (let player of gameState['players']) {
         console.log("place circle");
-        placeCircle(player['x'], player['y'], player['id'] === socket.id ? '#ffff00' : '#56bcff', 2.0);
+        placeCircle(player['x'], player['y'], player['id'] === socket.id ? '#0012ba' : '#ffa500', 2.0);
     }
 
     for (let wall of gameState['walls']) {
@@ -73,11 +73,32 @@ function placeSquare(x, y, color) {
     context.strokeRect(x * tileSize, y * tileSize, tileSize, tileSize);
 }
 
-function placeRect(x, y, xEnd, yEnd) {
+function placeRect(x, y) {
     context.fillStyle = '#000000';
-    context.fillRect(x * tileSize, y * tileSize, xEnd * tileSize, yEnd * tileSize);
+    context.fillRect(x * tileSize, y * tileSize, 2, tileSize);
     context.strokeStyle = 'black';
-    context.strokeRect(x * tileSize, y * tileSize, xEnd * tileSize, yEnd * tileSize);
+    context.strokeRect(x * tileSize, y * tileSize, 2, tileSize);
+
+    context.fillStyle = '#000000';
+    context.fillRect(x * tileSize, y * tileSize, tileSize, 2);
+    context.strokeStyle = 'black';
+    context.strokeRect(x * tileSize, y * tileSize, tileSize, 2);
+
+    context.fillStyle = '#000000';
+    context.fillRect(x * tileSize, (y + 28) * tileSize, tileSize, 10);
+    context.strokeStyle = 'black';
+    context.strokeRect(x * tileSize, (y + 28) * tileSize, tileSize, 10);
+
+    context.fillStyle = '#000000';
+    context.fillRect((x + 28) * tileSize, y  * tileSize, 10, tileSize);
+    context.strokeStyle = 'black';
+    context.strokeRect((x + 28) * tileSize, y  * tileSize, 10, tileSize);
+
+    context.fillStyle = '#000000';
+    context.fillRect(x * 28 * tileSize, y * 28 * tileSize, 2, tileSize);
+    context.strokeStyle = 'black';
+    context.strokeRect(x * 28 * tileSize, y * 28 * tileSize, 2, tileSize);
+
 }
 
 
