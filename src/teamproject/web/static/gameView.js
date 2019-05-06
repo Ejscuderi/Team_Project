@@ -13,13 +13,13 @@ function parseGameState(event) {
 
     drawGameBoard(gameState['gridSize']);
 
-    placeSquare(gameState['start']['x'], gameState['start']['y'], '#db0000');
+    placeSquare(gameState['start']['x'], gameState['start']['y'], '#fd2d32'); //#ca0005
 
-    placeSquare(gameState['base']['x'], gameState['base']['y'], '#03ba00');
+    placeSquare(gameState['base']['x'], gameState['base']['y'], '#8b007f');
 
     for (let player of gameState['players']) {
         console.log("place circle");
-        placeCircle(player['x'], player['y'], player['id'] === socket.id ? '#0012ba' : '#ffa500', 2.0);
+        placeCircle(player['x'], player['y'], player['id'] === socket.id ? '#0acc00' : '#c4f200', 2.0); //'#9ec400'
     }
 
     for (let wall of gameState['walls']) {
